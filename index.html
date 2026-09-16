@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can Nebraska's Retooled Offensive Line Finally Solve Its Trench Problem?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --scarlet:#C8102E;
+    --scarlet-dark:#7E0A1E;
+    --ink:#181410;
+    --cream:#F2ECDF;
+    --bone:#E4DBC7;
+    --steel:#5B564E;
+    --line:rgba(24,20,16,0.14);
+    --max-w:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;}
+
+  .headline-font{
+    font-family:'Oswald', 'Arial Narrow', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--cream);
+    padding:0 0 0 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:64px 24px 48px;
+    position:relative;
+    z-index:2;
+  }
+  .hero-tag{
+    font-family:'Oswald', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.14em;
+    color:var(--scarlet);
+    margin:0 0 22px;
+  }
+  .hero h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(34px, 6vw, 54px);
+    line-height:1.06;
+    letter-spacing:0.002em;
+    text-transform:none;
+    margin:0 0 26px;
+    max-width:11.5em;
+  }
+  .hero-dek{
+    font-size:19px;
+    line-height:1.55;
+    color:var(--bone);
+    max-width:34em;
+    margin:0;
+  }
+  .hero-stripe{
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent, transparent 78px,
+        rgba(255,255,255,0.045) 78px, rgba(255,255,255,0.045) 80px
+      );
+    z-index:1;
+  }
+  .hero-scoreline{
+    height:6px;
+    width:100%;
+    background:var(--scarlet);
+  }
+
+  /* the scoreboard stat block */
+  .scorebar{
+    background:var(--scarlet-dark);
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .scorebar-inner{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:22px 24px;
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .scorebar .num{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:44px;
+    color:#fff;
+    line-height:1;
+  }
+  .scorebar .label{
+    font-family:'Oswald', sans-serif;
+    font-size:14px;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,0.82);
+    max-width:26em;
+    line-height:1.4;
+  }
+
+  /* ---------- ARTICLE BODY ---------- */
+  main{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:52px 24px 20px;
+  }
+  h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:26px;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--ink);
+    margin:0 0 18px;
+    padding-bottom:14px;
+    border-bottom:2px solid var(--ink);
+    position:relative;
+  }
+  h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    width:56px;
+    height:2px;
+    background:var(--scarlet);
+  }
+  section.block{
+    margin-bottom:46px;
+  }
+  p{
+    font-size:18px;
+    line-height:1.72;
+    color:var(--ink);
+    margin:0 0 18px;
+  }
+  p:last-child{margin-bottom:0;}
+  .lede p{
+    font-size:19px;
+  }
+
+  /* ---------- O-LINE FORMATION STRIP ---------- */
+  .formation{
+    margin:0 0 46px;
+    background:var(--ink);
+    border-radius:6px;
+    padding:26px 22px 22px;
+    color:var(--cream);
+  }
+  .formation-head{
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    letter-spacing:0.1em;
+    color:var(--bone);
+    opacity:0.75;
+    margin:0 0 16px;
+  }
+  .formation-row{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:8px;
+  }
+  .formation-pos{
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.14);
+    border-top:3px solid var(--scarlet);
+    border-radius:3px;
+    padding:14px 10px 12px;
+    text-align:center;
+  }
+  .formation-pos .tag{
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:var(--scarlet);
+    margin:0 0 8px;
+    font-weight:600;
+  }
+  .formation-pos .name{
+    font-family:'Oswald', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    line-height:1.25;
+    color:#fff;
+    margin:0 0 5px;
+    text-transform:none;
+  }
+  .formation-pos .from{
+    font-size:12px;
+    color:var(--bone);
+    opacity:0.72;
+    line-height:1.35;
+    font-family:'Source Serif 4', serif;
+  }
+  @media (max-width:600px){
+    .formation-row{grid-template-columns:repeat(2, 1fr);}
+  }
+
+  /* ---------- INLINE STAT CALLOUT ---------- */
+  .callout{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    background:var(--bone);
+    border-left:4px solid var(--scarlet);
+    padding:18px 20px;
+    margin:0 0 28px;
+    border-radius:0 4px 4px 0;
+  }
+  .callout .num{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:38px;
+    color:var(--scarlet-dark);
+    line-height:1;
+    white-space:nowrap;
+  }
+  .callout .txt{
+    font-size:16px;
+    line-height:1.5;
+    color:var(--steel);
+    padding-top:4px;
+  }
+
+  /* ---------- SCHEDULE GAUNTLET ---------- */
+  .gauntlet{
+    margin:0 0 10px;
+  }
+  .gauntlet-head{
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    letter-spacing:0.1em;
+    color:var(--steel);
+    margin:0 0 16px;
+  }
+  .gauntlet-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid var(--line);
+  }
+  .gauntlet-list li{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .gauntlet-week{
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    color:var(--scarlet);
+    font-weight:600;
+    width:64px;
+    flex-shrink:0;
+  }
+  .gauntlet-opp{
+    font-family:'Oswald', sans-serif;
+    font-size:19px;
+    font-weight:500;
+    color:var(--ink);
+    flex-shrink:0;
+    width:140px;
+  }
+  .gauntlet-note{
+    font-size:15px;
+    color:var(--steel);
+    line-height:1.5;
+  }
+  @media (max-width:560px){
+    .gauntlet-list li{flex-wrap:wrap;}
+    .gauntlet-opp{width:auto;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:8px 24px 64px;
+  }
+  .follow{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    font-size:15px;
+    color:var(--steel);
+    font-style:italic;
+  }
+  .follow a{
+    color:var(--scarlet-dark);
+    text-decoration:none;
+    border-bottom:1px solid rgba(126,10,30,0.35);
+    font-style:normal;
+    font-family:'Source Serif 4', serif;
+  }
+  .follow a:hover{border-bottom-color:var(--scarlet-dark);}
+
+  @media (prefers-reduced-motion: no-preference){
+    .hero h1{animation:rise 0.6s ease-out;}
+  }
+  @keyframes rise{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-stripe"></div>
+    <div class="hero-inner">
+      <p class="hero-tag headline-font">Big Ten Football &nbsp;/&nbsp; Nebraska</p>
+      <h1>Can Nebraska's Retooled Offensive Line Finally Solve Its Trench Problem?</h1>
+      <p class="hero-dek">A portal-built unit with 100-plus starts of experience faces its first real test — and the results so far are encouraging, if unproven.</p>
+    </div>
+    <div class="hero-scoreline"></div>
+  </div>
+
+  <div class="scorebar">
+    <div class="scorebar-inner">
+      <div class="num headline-font">33</div>
+      <div class="label headline-font">SACKS ALLOWED IN 2025 — TIED FOR 115TH NATIONALLY</div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="block lede">
+      <p>For years, Nebraska's offensive line has been the punchline of the program's struggles. In 2025, the Huskers allowed 33 sacks, tying for 115th nationally — not the kind of number that wins games in the Big Ten. Heading into 2026, fixing the trenches became priority one.</p>
+    </section>
+
+    <section class="block">
+      <h2>A Complete Overhaul</h2>
+      <p>Matt Rhule brought in a new voice to lead the room: offensive line coach Geep Wade, hired after a strong run at Georgia Tech, paired with run-game coordinator Lonnie Teasley from South Carolina. Together they rebuilt the position almost entirely through the transfer portal, adding three projected starters. They join returning veterans Elijah Pritchett at left tackle and Justin Evans at center, who alone brings 31 career starts into his senior season.</p>
+
+      <div class="formation">
+        <p class="formation-head headline-font">Projected Starting Five, Left To Right</p>
+        <div class="formation-row">
+          <div class="formation-pos">
+            <p class="tag headline-font">LT</p>
+            <p class="name">Elijah Pritchett</p>
+            <p class="from">Returning veteran</p>
+          </div>
+          <div class="formation-pos">
+            <p class="tag headline-font">LG</p>
+            <p class="name">Paul Mubenga</p>
+            <p class="from">Transfer — LSU</p>
+          </div>
+          <div class="formation-pos">
+            <p class="tag headline-font">C</p>
+            <p class="name">Justin Evans</p>
+            <p class="from">Returning — 31 career starts</p>
+          </div>
+          <div class="formation-pos">
+            <p class="tag headline-font">RG</p>
+            <p class="name">Brendan Black</p>
+            <p class="from">Transfer — Iowa State, 30+ starts</p>
+          </div>
+          <div class="formation-pos">
+            <p class="tag headline-font">RT</p>
+            <p class="name">Tree Babalade</p>
+            <p class="from">Transfer — South Carolina</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Experience, at Least on Paper</h2>
+      <p>Combined, Nebraska's projected starting five brings more than 100 games of starting experience to the field — a sharp change from a unit that has often relied on undercooked, underexperienced pieces. Behind them, returners like Gunnar Gottula and Tyler Knaak provide depth, while four-star freshman Claude Mpouma is being developed for the future rather than thrown into the fire immediately.</p>
+    </section>
+
+    <section class="block">
+      <h2>Early Returns</h2>
+      <div class="callout">
+        <div class="num headline-font">546</div>
+        <div class="txt">Total yards of offense Nebraska piled up against Bowling Green, with Anthony Colandrea getting time to operate in the pocket without the pressure issues that plagued last season's offense.</div>
+      </div>
+      <p>Through two games, the results have been encouraging, if not conclusive. Of course, Ohio and Bowling Green aren't exactly murderer's row for a Big Ten offensive line.</p>
+    </section>
+
+    <section class="block">
+      <h2>The Real Exam Is Coming</h2>
+      <p>The true test starts at Michigan State, then intensifies with Indiana and Oregon on back-to-back weekends in October — games where opposing defensive lines will be faster, stronger, and far better coached than anything Nebraska has faced so far.</p>
+
+      <div class="gauntlet">
+        <p class="gauntlet-head headline-font">The Gauntlet</p>
+        <ul class="gauntlet-list">
+          <li>
+            <span class="gauntlet-week headline-font">Week 4</span>
+            <span class="gauntlet-opp">Michigan State</span>
+            <span class="gauntlet-note">First real physical test of the season</span>
+          </li>
+          <li>
+            <span class="gauntlet-week headline-font">Week 6</span>
+            <span class="gauntlet-opp">Indiana</span>
+            <span class="gauntlet-note">Opens a brutal back-to-back stretch</span>
+          </li>
+          <li>
+            <span class="gauntlet-week headline-font">Week 7</span>
+            <span class="gauntlet-opp">Oregon</span>
+            <span class="gauntlet-note">Among the best-coached fronts in the conference</span>
+          </li>
+        </ul>
+      </div>
+
+      <p>If Wade's group can hold up physically against that level of competition, it would represent one of the most meaningful improvements of the Rhule era. If the same old issues resurface, it will be clear that better recruiting and coaching still haven't solved the fundamental problem up front.</p>
+    </section>
+
+    <section class="block">
+      <p>Either way, the offensive line — long considered Nebraska's Achilles' heel — is finally getting the kind of investment and attention it has needed for years.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="follow">Follow Nebraska's offensive progress all season at <a href="https://nebraskafootballschedule.us/">Nebraska Football Schedule</a>.</p>
+  </footer>
+
+</body>
+</html>
